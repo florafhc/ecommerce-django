@@ -135,6 +135,22 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-au`to-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+
+}
+
+# SMTP configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST =  "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'fuhaichen33@gmail.com'
+EMAIL_HOST_PASSWORD = 'ckoklzwdlctrwnjf'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
